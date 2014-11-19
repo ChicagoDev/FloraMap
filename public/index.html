@@ -24,7 +24,28 @@
 
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 </head>
-<body>        
+<body>
+
+<!-- Load the Facebook SDK -->
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '718194994943476',
+            xfbml      : true,
+            version    : 'v2.1',
+            cookie     : true,
+            status     : true
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
         
     <header class="header"></header>
 
@@ -33,6 +54,12 @@
             <section id="content" class="col-xs-12 col-sm-6 col-md-6"></section>
             <section id="map" class="col-xs-12 col-sm-6 col-md-6" ></section>
         </section>
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+        </fb:login-button>
+
+        <div id="status">
+        </div>
+
     </section>
     
     <footer class="footer row navbar-fixed-bottom">
@@ -65,6 +92,7 @@
     <script src="js/views/about.js"></script>
     <script src="js/main.js"></script>
     <script src="./js/map_script.js"></script>
+    <script src="js/fb_login/fb_login.js"></script>
     
 </body>
 </html>
