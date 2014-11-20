@@ -111,7 +111,6 @@ input[type="file"]{
     font-size: 12px;
 }
 
-
 /**
 ** (Plant List Item) 
 **/
@@ -229,4 +228,11 @@ hr{
 .plantView {
     alignment-adjust: left;
 
+}
+
+/* Mobile Version */
+
+#mobile-home a{
+    padding: 15px;
+    text-decoration: none;
 }

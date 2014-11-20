@@ -12,12 +12,12 @@ var Server = mongo.Server,
 // - Conect to the database hosted on a remote server
 // - If the collection doesn't exist, it will be created at the first adding of new data
 // - Change the <VALUE_INSIDE> for the corresponding value
-/*
-var server = new Server('<SERVER_DB_URL', <SERVER_DB_PORT>, {auto_reconnect: true});
+
+var server = new Server('ds047440.mongolab.com', 47440, {auto_reconnect: true});
 db = new Db('plantdb', server, {safe: true});
 
 db.open(function(err, database) {
-    database.authenticate("<SERVER_DB_USER>", "<SERVER_DB_USER_PASSWORD>", function(err, res) {
+    database.authenticate("admin", "admin", function(err, res) {
 
         if (!err) {
             console.log("Connected to 'plantdb' database");
@@ -34,7 +34,7 @@ db.open(function(err, database) {
         }
     });
 });
-*/
+
 
 /*********************************************************************************************/
 /* Use this block if you would like to use a local database (with no user authentication)
@@ -42,24 +42,24 @@ db.open(function(err, database) {
 // - Conect to the database hosted on a remote server
 // - If the collection doesn't exist, it will be created at the first adding of new data
 // - Change the <VALUE_INSIDE> for the corresponding value
-var server = new Server('localhost', 27017, {auto_reconnect: true});
-db = new Db('plantdb', server, {safe: true});
- 
-db.open(function(err, db) {
-if(!err) {
-    console.log("Connected to 'plantdb' database");
-
-    db.collection('plants', {safe:true}, function(err, collection) {
-        // If the collection "plants" doesn't exist
-        if (err) {
-             console.log("The 'plants' collection doesn't exist yet.");
-        }
-    });
-}
-else{
-    console.log("Failure attempting to connect to the database 'plantdb'@"+server.host);
-}
-});
+//var server = new Server('localhost', 27017, {auto_reconnect: true});
+//db = new Db('plantdb', server, {safe: true});
+// 
+//db.open(function(err, db) {
+//if(!err) {
+//    console.log("Connected to 'plantdb' database");
+//
+//    db.collection('plants', {safe:true}, function(err, collection) {
+//        // If the collection "plants" doesn't exist
+//        if (err) {
+//             console.log("The 'plants' collection doesn't exist yet.");
+//        }
+//    });
+//}
+//else{
+//    console.log("Failure attempting to connect to the database 'plantdb'@"+server.host);
+//}
+//});
  
 /*************************************************************************************************/
 
