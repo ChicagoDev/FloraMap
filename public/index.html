@@ -54,7 +54,8 @@
             <section id="content" class="col-xs-12 col-sm-6 col-md-6"></section>
             <section id="map" class="col-xs-12 col-sm-6 col-md-6" ></section>
         </section>
-        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+        <!--TODO Use bootstrap alerts, when someone wants to submit a plan if they are not logged in.... :)-->
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" auto_logout_link="true" data-size="large">
         </fb:login-button>
 
         <div id="status">
