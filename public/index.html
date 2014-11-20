@@ -50,10 +50,11 @@
     <header class="header"></header>
 
     <section class="container" style="height:100%">
-        <section class="row">
+        <section class="row visible-md-block visible-lg-block">
             <section id="content" class="col-xs-12 col-sm-6 col-md-6"></section>
             <section id="map" class="col-xs-12 col-sm-6 col-md-6" ></section>
         </section>
+
         <!--TODO Use bootstrap alerts, when someone wants to submit a plan if they are not logged in.... :)-->
         <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" auto_logout_link="true" data-size="large">
         </fb:login-button>
@@ -61,7 +62,12 @@
         <div id="status">
         </div>
 
+        <section id="mobile-home" class="visible-xs-block visible-sm-block"></section>
     </section>
+    
+        <section class="row visible-xs-block visible-sm-block">
+            
+        </section>
     
     <footer class="footer row navbar-fixed-bottom">
         <p class="col-md-12">

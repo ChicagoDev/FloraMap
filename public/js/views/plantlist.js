@@ -12,7 +12,9 @@ window.PlantListView = Backbone.View.extend({
 
         $(this.el).html('<ul style="padding:5px 0px 120px 0px;"></ul>');
 
-        for (var i = startPos; i < endPos; i++) {
+        //for (var i = startPos; i < endPos; i++) {
+        
+        for (var i = 0; i < len; i++) {
             $('ul', this.el).append(new PlantListItemView({model: plants[i]}).render().el);            
         }
 

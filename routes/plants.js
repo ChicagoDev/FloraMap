@@ -44,7 +44,7 @@ db.open(function(err, database) {
 // - Change the <VALUE_INSIDE> for the corresponding value
 //var server = new Server('localhost', 27017, {auto_reconnect: true});
 //db = new Db('plantdb', server, {safe: true});
-//
+
 //db.open(function(err, db) {
 //if(!err) {
 //    console.log("Connected to 'plantdb' database");
