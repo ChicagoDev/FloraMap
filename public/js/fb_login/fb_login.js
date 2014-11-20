@@ -45,3 +45,10 @@ function testAPI() {
             'Thanks for logging in, ' + response.name + '!';
     });
 }
+
+function printLoginStatus()
+{
+    FB.getLoginStatus(function (response) {
+        console.log(response.status)
+    })
+}

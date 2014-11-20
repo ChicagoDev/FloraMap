@@ -5,9 +5,6 @@ var express = require('express'),
     morgan = require('morgan'),
     errorhandler = require('errorhandler'),
     plant = require('./routes/plants'),
-    config = require('./oauth.js'),
-    passport = require('passport'),
-    FacebookStrategy = require('passport-facebook').Strategy,
     app = express();
 
 /*

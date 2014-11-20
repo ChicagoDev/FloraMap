@@ -43,7 +43,27 @@ window.PlantView = Backbone.View.extend({
             utils.displayValidationErrors(check.messages);
             return false;
         }
-        this.savePlant();
+
+        var plantview = this;
+
+        FB.getLoginStatus(
+            function(response) {
+                //console.log(response.status)
+                if (response.status === 'connected') {
+                    // Logged into your app and Facebook.
+                    plantview.savePlant();
+                } else if (response.status === 'not_authorized') {
+                    // The person is logged into Facebook, but not your app.
+                    alert("You need to be logged-in to floraMap to do that")
+                } else {
+                    // The person is not logged into Facebook, so we're not sure if
+                    // they are logged into this app or not.
+                    alert("You need to be logged-in to Facebook to do that!")
+
+                }
+            }
+        )
+
         return false;
     },
 
