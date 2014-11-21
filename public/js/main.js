@@ -21,8 +21,7 @@ var AppRouter = Backbone.Router.extend({
         if (!this.homeView) {
             this.homeView = new HomeView();
         }
-        $('#content').html(this.homeView.el);
-        $('#mobile-home').html(this.homeView.el);
+        $('#content, #mobile-home').html(this.homeView.el);
         this.headerView.selectMenuItem('');
         
         utils.hideLogoImg(true);
