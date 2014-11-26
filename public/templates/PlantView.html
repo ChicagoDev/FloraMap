@@ -45,7 +45,10 @@
                     <div class="control-group row">
                         <div class="col-md-6">
                             <label for="picture" class="control-label">Picture:</label>
-                            <input type="file" class="form-control" id="picture" name="picture" value="<%= picture %>"/>                             </div>
+                            <input type="file" class="form-control" id="picture" name="picture" value="<%= picture %>"/>
+                            <!--<input type="file" accept="image/*" id="camera-image">-->
+
+                        </div>
                         <!-- The thumbnail bellow is only shown on the editing form (acessible from the list plants-->
                         <div class="col-md-6" style="text-align:center">
                             <img src="<%= picture === null ? 'pics/generic_plant_fm.jpg' : 'pics/' + picture %>" 
