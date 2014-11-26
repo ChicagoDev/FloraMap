@@ -33,6 +33,9 @@
                         <span class="form-control-feedback"></span>
                         <span class="help-block"></span>
                     </div>
+
+
+
                     <div class="control-group">
                         <label for="description" class="control-label">Notes:</label>
                         <div class="controls">
@@ -42,31 +45,12 @@
                             <span class="help-block"></span>
                         </div>  
                     </div>
-
-
-                <!--Attempting to Add facebookName to Model
-
-
-
-                    <div>
-                        <div class="control-group">
-                            <textarea id="fbName" class="form-control" name="fbName" style="width: 100%;">
-                                <%= fbName %>
-                            </textarea>
-
-
-                            <span class="form-control-feedback"></span>
-                            <span class="help-block"></span>
-                        </div>
-                    </div>
-                    -->
-
-
                     <div class="control-group row">
                         <div class="col-md-6">
                             <label for="picture" class="control-label">Picture:</label>
                             <input type="file" class="form-control" id="picture" name="picture" value="<%= picture %>"/>
-                            <!--<input type="file" accept="image/*" id="camera-image">-->
+                            <!--<input type="file" accept="image/*" id="picture">-->
+                            <!--<input type="file" accept="image/*;capture=camera" id="picture">-->
 
                         </div>
                         <!-- The thumbnail bellow is only shown on the editing form (acessible from the list plants-->
@@ -74,6 +58,11 @@
                             <img src="<%= picture === null ? 'pics/generic_plant_fm.jpg' : 'pics/' + picture %>" 
                                  alt="<%= name %>" title="<%= name %>" id="thumbnail">
                         </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="fbName" class="control-label">Submitted By:</label>
+                        <input type="text" class="form-control" id="fbName" name="fbName" value="<%= fbName%>" readonly>
                     </div>
                     <br>
                     <div class="form-actions">
