@@ -46,7 +46,7 @@ function testAPI() {
     });
 }
 
-function printLoginStatus()
+function saveIfLoggedIn()
 {
     FB.getLoginStatus(function (response) {
         console.log(response.status)

@@ -44,14 +44,22 @@ window.PlantView = Backbone.View.extend({
             return false;
         }
 
-        var plantview = this;
-
         FB.getLoginStatus(
             function(response) {
                 //console.log(response.status)
                 if (response.status === 'connected') {
                     // Logged into your app and Facebook.
-                    plantview.savePlant();
+
+                    //Obtain the User Name Strings to pass into the model.
+                    FB.api("/me", function(response) {
+                        var name = response.first_name + " " + response.last_name;
+                        //console.log("Fetched FB name upon save, name = " + name);
+                        self.model.set({fbName: name});
+                        self.savePlant();
+                    });
+
+                    //console.log("Fetching name to attach to model: " response.);
+
                 } else if (response.status === 'not_authorized') {
                     // The person is logged into Facebook, but not your app.
                     alert("You need to be logged-in to floraMap to do that")
