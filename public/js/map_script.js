@@ -1,4 +1,6 @@
 var map;
+var latitude_temp = 0, longitude_temp = 0;
+
 // Atributes
 var mapAttr = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
         '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -135,13 +137,32 @@ function addControls() {
     new L.Control.CurrentPosition({}).addTo(map);
 }
 
-
+// Locate the current location
 function mylocation() {
     map.locate({setView: true, maxZoom: 12});
 }
 
+// Get the current latitude and longitude as a Object
+function getCurrentCoordinates(){
+    var coordinates = Object();
+    mylocation();
+    
+    coordinates['lat'] = latitude_temp;
+    coordinates['lng'] = longitude_temp;
+    
+    return coordinates;
+}
 
+// If the location is found
 function onLocationFound(e) {
+    addMarkerCurrentLocation(e);
+    
+    latitude_temp = e.latlng.lat;
+    longitude_temp = e.latlng.lng;
+}
+
+// Add a marker on the point where is the current location (user's position on the map)
+function addMarkerCurrentLocation(e){
     var radius = e.accuracy / 2;
 
     var iconMarker = L.icon({
@@ -156,7 +177,8 @@ function onLocationFound(e) {
     var marker = L.marker(e.latlng, {icon: iconMarker}).addTo(map).bindPopup(popup).openPopup();
     
     marker.on('click', onMarkerCurrentClick);
-
+    
+    fillFieldsLatlng(e.latlng);
 }
 
 function onLocationError(e) {
@@ -234,6 +256,13 @@ function fillFieldsLatlng(coord) {
     })
 }
 
+function currentLocation(){
+    var coord = getCurrentCoordinates();
+    fillFieldsLatlng(coord);
+    latitude_temp = 0;
+    longitude_temp = 0;
+}
+
 // Initialize the map adding controls, markers and current location
 function init_map(){
     
@@ -244,5 +273,5 @@ function init_map(){
     map.on('locationerror', onLocationError);  
     map.on('click', onClickMap);      
     
-    map.locate({setView: true, maxZoom: 12});
+    mylocation();
 }

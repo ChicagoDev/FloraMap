@@ -27,21 +27,25 @@
                     
             </div>
             <div class="vtop information">
-                <h5 class="name"><%= name %></h5>
-                <div style="float:right; position:relative;margin-top:-30px; margin-left:-155px">
-                    <a href="#plants/<%= _id %>" id="pl_<%= _id %>">
-                        <button type="button" class="btn btn-default btn-xs">
-                            <span class="glyphicon glyphicon-edit"></span> Edit
-                        </button>
-                    </a> 
-                </div>
-                <div style="float:right; position:relative;margin-top:-30px; margin-right:70px">
-                        <button type="button" class="btn btn-default btn-xs visible-xs-block visible-sm-block">
+                <div class="header-group">
+                    <div>
+                        <h5 class="name"><%= name %></h5>
+                    </div>            
+                    <div>
+                        <a href="#plants/<%= _id %>" id="pl_<%= _id %>">
+                            <button type="button" class="btn btn-default btn-xs"
+                                title="Edit the information of this plant">
+                                <span class="glyphicon glyphicon-edit"></span> Edit
+                            </button>
+                        </a> 
+                        <button type="button" class="btn btn-default btn-xs visible-xs-block visible-sm-block"
+                                style="margin-right:70px;"
+                                title="Show the plant on the map">
                             <span class="glyphicon glyphicon-map-marker"></span> Map It
                         </button>
-                                   
-                </div>
+                    </div>      
                 <hr>
+                </div> 
                 <div>
                     <p style="text-align:center" class="visible-xs-block visible-sm-block">
                         <img src="<%= picture === null ? 'pics/generic_plant_fm.jpg' : 'pics/' + picture %>" 
@@ -50,11 +54,10 @@
                     </p>
                     
                     <p class="description">
-                    <br>
-                    <%= description %>  
-                    
+                    <%= description %>                      
                     </p>                  
                 </div>
+                
             </div>
         </section>
     <section class="col-md-1"></section>
