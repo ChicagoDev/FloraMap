@@ -58,6 +58,7 @@ var AppRouter = Backbone.Router.extend({
         this.headerView.selectMenuItem();
         
         $(".form-actions .delete").add();
+        $(".submittedby-group").add();
         $("img#thumbnail").add();
         
         utils.hideLogoImg(false);
@@ -70,6 +71,7 @@ var AppRouter = Backbone.Router.extend({
         this.headerView.selectMenuItem('add-menu');
         
         $(".form-actions .delete").remove();
+        $(".submittedby-group").remove();
         $("img#thumbnail").remove();
         utils.hideLogoImg(false);
         currentLocation();
