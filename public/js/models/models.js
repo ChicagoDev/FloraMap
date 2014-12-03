@@ -19,7 +19,13 @@ window.Plant= Backbone.Model.extend({
         this.validators.longitude = function (value) {
             return value != '' ? {isValid: true} : {isValid: false, message: ""};
         };
-        
+
+        //TODO Adda  validator for facebook name, but facebook name is never set until after save is called.... So maybe more of a v2.0 thing.
+        //
+        //When We add a username to a form, re comment this in.
+        /*this.validators.userName = function (value) {
+            return value.length > 0 ? {isValid: true} : {isValid: false, message: "You must enter a name"};
+        };*/
     },
 
     validateItem: function (key) {
@@ -49,7 +55,9 @@ window.Plant= Backbone.Model.extend({
         longitude: "",
         name: "",
         description: "",
-        picture: null
+        picture: null,
+        fbName:""
+        //userName: ""
     }
 });
 

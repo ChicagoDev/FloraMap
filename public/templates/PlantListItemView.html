@@ -1,7 +1,7 @@
 <section class="row">
     <section class="col-md-1"></section>
-        <section class="col-md-10 plant-list-item">
-            <div class="image">
+        <section class="col-md-10 plant-list-item" style="width: 97%">
+            <div class="image hidden-xs">
                 <img src="<%= picture === null ? 'pics/generic_plant_fm.jpg' : 'pics/' + picture %>" 
                      alt="<%= name %>" title="<%= name %>" data-toggle="modal" data-target="#myModal">
                 
@@ -28,17 +28,33 @@
             </div>
             <div class="vtop information">
                 <h5 class="name"><%= name %></h5>
-            <div style="float:right; position:relative;margin-top:-30px">
-                <a href="#plants/<%= _id %>" id="pl_<%= _id %>">
-                    <button type="button" class="btn btn-default btn-xs">
-                        <span class="glyphicon glyphicon-edit"></span> Edit
-                    </button>
-                </a>                
-            </div>
+                <div style="float:right; position:relative;margin-top:-30px; margin-left:-155px">
+                    <a href="#plants/<%= _id %>" id="pl_<%= _id %>">
+                        <button type="button" class="btn btn-default btn-xs">
+                            <span class="glyphicon glyphicon-edit"></span> Edit
+                        </button>
+                    </a> 
+                </div>
+                <div style="float:right; position:relative;margin-top:-30px; margin-right:70px">
+                        <button type="button" class="btn btn-default btn-xs visible-xs-block visible-sm-block">
+                            <span class="glyphicon glyphicon-map-marker"></span> Map It
+                        </button>
+                                   
+                </div>
                 <hr>
-                <p class="description">
-                    <%= description %>                    
-                </p>
+                <div>
+                    <p style="text-align:center" class="visible-xs-block visible-sm-block">
+                        <img src="<%= picture === null ? 'pics/generic_plant_fm.jpg' : 'pics/' + picture %>" 
+                                alt="<%= name %>" title="<%= name %>" style="max-width:150px" 
+                             data-toggle="modal" data-target="#myModal">
+                    </p>
+                    
+                    <p class="description">
+                    <br>
+                    <%= description %>  
+                    
+                    </p>                  
+                </div>
             </div>
         </section>
     <section class="col-md-1"></section>

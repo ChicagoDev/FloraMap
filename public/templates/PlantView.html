@@ -33,6 +33,9 @@
                         <span class="form-control-feedback"></span>
                         <span class="help-block"></span>
                     </div>
+
+
+
                     <div class="control-group">
                         <label for="description" class="control-label">Notes:</label>
                         <div class="controls">
@@ -45,22 +48,31 @@
                     <div class="control-group row">
                         <div class="col-md-6">
                             <label for="picture" class="control-label">Picture:</label>
-                            <input type="file" class="form-control" id="picture" name="picture" value="<%= picture %>"/>                             </div>
+                            <input type="file" class="form-control" id="picture" name="picture" value="<%= picture %>"/>
+                            <!--<input type="file" accept="image/*" id="picture">-->
+                            <!--<input type="file" accept="image/*;capture=camera" id="picture">-->
+
+                        </div>
                         <!-- The thumbnail bellow is only shown on the editing form (acessible from the list plants-->
                         <div class="col-md-6" style="text-align:center">
                             <img src="<%= picture === null ? 'pics/generic_plant_fm.jpg' : 'pics/' + picture %>" 
                                  alt="<%= name %>" title="<%= name %>" id="thumbnail">
                         </div>
                     </div>
+
+                    <div class="control-group">
+                        <label for="fbName" class="control-label">Submitted By:</label>
+                        <input type="text" class="form-control" id="fbName" name="fbName" value="<%= fbName%>" readonly>
+                    </div>
                     <br>
                     <div class="form-actions">
-                        <a href="#" class="btn btn-primary save">Save</a>
+                        <a href="#" class="btn btn-primary save" onclick="saveIfLoggedIn()">Save</a>
                         <!-- The delete button is only shown on the editing form (acessible from the list plants-->
                         <a href="#" class="btn delete">Delete</a>
                     </div>
             </fieldset>
         </form>
-        <div class="row-fluid status-bar">
+        <div class="row-fluid status-bar"> 
             <div>
                 <div class="alert alert-success" style="display: none">
                     <b>Success!</b> Plant saved successfully

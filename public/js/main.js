@@ -21,7 +21,7 @@ var AppRouter = Backbone.Router.extend({
         if (!this.homeView) {
             this.homeView = new HomeView();
         }
-        $('#content').html(this.homeView.el);
+        $('#content, #mobile-home').html(this.homeView.el);
         this.headerView.selectMenuItem('');
         
         utils.hideLogoImg(true);
@@ -40,7 +40,7 @@ var AppRouter = Backbone.Router.extend({
         var p = page ? parseInt(page, 10) : 1;
         var plantList = new PlantCollection();
         plantList.fetch({success: function(){
-            $("#content").html(new PlantListView({model: plantList, page: p}).el);  
+            $("#content, #mobile-home").html(new PlantListView({model: plantList, page: p}).el); 
         }});
         
         // Remove the current markers on the map and adding gain, in order to update
@@ -53,7 +53,7 @@ var AppRouter = Backbone.Router.extend({
     plantDetails: function (id) {
         var plant = new Plant({_id: id});
         plant.fetch({success: function(){
-            $("#content").html(new PlantView({model: plant}).el);            
+            $("#content, #mobile-home").html(new PlantView({model: plant}).el);   
         }});
         this.headerView.selectMenuItem();
         
@@ -65,7 +65,7 @@ var AppRouter = Backbone.Router.extend({
 
 	addPlant: function() {
         var plant = new Plant();
-        $('#content').html(new PlantView({model: plant}).el);
+        $('#content, #mobile-home').html(new PlantView({model: plant}).el);
         this.headerView.selectMenuItem('add-menu');
         
         $(".form-actions .delete").remove();
@@ -78,7 +78,7 @@ var AppRouter = Backbone.Router.extend({
         if (!this.aboutView) {
             this.aboutView = new AboutView();
         }
-        $('#content').html(this.aboutView.el);
+        $('#content, #mobile-home').html(this.aboutView.el);
         
         this.headerView.selectMenuItem('about-menu');
         utils.hideLogoImg(false);

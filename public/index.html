@@ -53,25 +53,31 @@
     <header class="header"></header>
 
     <section class="container" style="height:100%">
-        <section class="row">
+        
+        <section id="mobile-home" class="visible-xs-block visible-sm-block"></section>
+        
+        <section class="row visible-md-block visible-lg-block">
             <section id="content" class="col-xs-12 col-sm-6 col-md-6"></section>
             <section id="map" class="col-xs-12 col-sm-6 col-md-6" ></section>
         </section>
+
         <!--TODO Use bootstrap alerts, when someone wants to submit a plan if they are not logged in.... :)-->
-        
-        <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" auto_logout_link="true" data-size="large">
-        </fb:login-button> -->
-          
-        <!-- <div id="status">
-        </div> -->
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" auto_logout_link="true" data-size="large">
+        </fb:login-button>
+
+        <div id="status">
+        </div>
     </section>
-    
+               
     <footer class="footer row navbar-fixed-bottom">
         <p class="col-md-12">
             <a href="http://luc.edu/" target="_blank">Loyola University Chicago</a> - COMP 388/424 - Client-Side Web Design
             <br>
             <span class="hidden-xs">
-                By Cole M. Johnson, Jonatha Nunes da Silva, Jose Kellison de A. Silva, Maxwell Erin Palmer, Rafael Ortiz
+                By Cole M. Johnson, Jonatha Nunes da Silva, Jose Kellison de A. Silva, Maxwell Erin Palmer, Rafael Ortiz <br>
+                <!--TODO Third line doesn't show in browser.-->
+                Blake Gideon, Cole Grover &amp; Sarah Murray
+
             </span>
         </p>
     </footer> 

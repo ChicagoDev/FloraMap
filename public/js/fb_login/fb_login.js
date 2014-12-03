@@ -50,27 +50,9 @@ function testAPI() {
     });
 }
 
-
-/*
-* attempts to make my own button SEM 11/20/14
-*/
-
-// function fb_login() {
-//     FB.login( function() {}, { scope: 'email,public_profile' } );
-// }
-
-// FB.login(function(response) {
-//   console.log('statusChangeCallback');
-//   console.log(response);
-//   if (response.status === 'connected') {
-//     // Logged into your app and Facebook.
-//     testAPI();
-//   } else if (response.status === 'not_authorized') {
-//     // The person is logged into Facebook, but not your app.
-//   } else {
-//       document.getElementById('status').innerHTML = 'Please log ' +
-//           'into Facebook.';
-//       document.getElementById('login-menu').innerHTML =
-//           '<i class="fa fa-facebook"></i> Login with Facebook';
-//   }
-// });
+function saveIfLoggedIn()
+{
+    FB.getLoginStatus(function (response) {
+        console.log(response.status)
+    })
+}
