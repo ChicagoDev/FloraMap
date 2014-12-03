@@ -23,6 +23,8 @@ function statusChangeCallback(response) {
         // they are logged into this app or not.
         document.getElementById('status').innerHTML = 'Please log ' +
             'into Facebook.';
+        document.getElementById('login-text').innerHTML =
+            '<i class="glyphicon glyphicon-log-in"></i> Log In';
     }
 }
 
@@ -43,5 +45,32 @@ function testAPI() {
         console.log('Successful login for: ' + response.name);
         document.getElementById('status').innerHTML =
             'Thanks for logging in, ' + response.name + '!';
+        document.getElementById('login-text').innerHTML =
+            '<i class="glyphicon glyphicon-log-in"></i> Log out';
     });
 }
+
+
+/*
+* attempts to make my own button SEM 11/20/14
+*/
+
+// function fb_login() {
+//     FB.login( function() {}, { scope: 'email,public_profile' } );
+// }
+
+// FB.login(function(response) {
+//   console.log('statusChangeCallback');
+//   console.log(response);
+//   if (response.status === 'connected') {
+//     // Logged into your app and Facebook.
+//     testAPI();
+//   } else if (response.status === 'not_authorized') {
+//     // The person is logged into Facebook, but not your app.
+//   } else {
+//       document.getElementById('status').innerHTML = 'Please log ' +
+//           'into Facebook.';
+//       document.getElementById('login-menu').innerHTML =
+//           '<i class="fa fa-facebook"></i> Login with Facebook';
+//   }
+// });

@@ -13,6 +13,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,700' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap-social.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
@@ -45,6 +46,8 @@
         js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+
+    
 </script>
         
     <header class="header"></header>
@@ -55,12 +58,12 @@
             <section id="map" class="col-xs-12 col-sm-6 col-md-6" ></section>
         </section>
         <!--TODO Use bootstrap alerts, when someone wants to submit a plan if they are not logged in.... :)-->
-        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" auto_logout_link="true" data-size="large">
-        </fb:login-button>
-
-        <div id="status">
-        </div>
-
+        
+        <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" auto_logout_link="true" data-size="large">
+        </fb:login-button> -->
+          
+        <!-- <div id="status">
+        </div> -->
     </section>
     
     <footer class="footer row navbar-fixed-bottom">
