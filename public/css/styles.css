@@ -248,6 +248,10 @@ hr{
   .innerFbButton {
     display: block !important;
   }
+  
+  .outerFbButton {
+    text-align: left;
+  }
 }
 
 .plantView {
