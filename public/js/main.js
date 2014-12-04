@@ -58,6 +58,7 @@ var AppRouter = Backbone.Router.extend({
         this.headerView.selectMenuItem();
         
         $(".form-actions .delete").add();
+        $(".submittedby-group").add();
         $("img#thumbnail").add();
         
         utils.hideLogoImg(false);
@@ -65,13 +66,15 @@ var AppRouter = Backbone.Router.extend({
 
 	addPlant: function() {
         var plant = new Plant();
+        
         $('#content, #mobile-home').html(new PlantView({model: plant}).el);
         this.headerView.selectMenuItem('add-menu');
         
         $(".form-actions .delete").remove();
+        $(".submittedby-group").remove();
         $("img#thumbnail").remove();
-        
         utils.hideLogoImg(false);
+        currentLocation();
 	},
 
     about: function () {

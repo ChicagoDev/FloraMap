@@ -142,6 +142,13 @@ ul{list-style: none;}
     float: none;
 }
 
+.vtop button{
+    float:right; 
+    position:relative; 
+    margin-top:-30px;
+    min-width: 65px;
+}
+
 .plant-list-item {
     display: table;
     padding: 15px;
@@ -238,8 +245,17 @@ hr{
         margin-bottom: 35px;
     }
 
-    #plant-view-form img#thumbnail{
-        margin-top: 15px;
+    .plant-list-item .information{
+        padding-left: 0px;
+        width: 100%;
+    }
+
+    .btn-location{
+        margin-right: 10px;
+    }
+    
+    .coordinates{
+        margin-bottom: 9px;
     }
 
 }
