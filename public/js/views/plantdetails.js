@@ -54,7 +54,13 @@ window.PlantView = Backbone.View.extend({
                     FB.api("/me", function(response) {
                         var name = response.first_name + " " + response.last_name;
                         //console.log("Fetched FB name upon save, name = " + name);
+                        var email = response.email;
+                        var fbID = response.id;
+
+                        //console.log(response);
                         self.model.set({fbName: name});
+                        self.model.set({email: email});
+                        self.model.set({fbId: fbID});
                         self.savePlant();
                     });
 
