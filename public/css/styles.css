@@ -27,6 +27,25 @@ body .container{
     margin-top: -9px;
 }
 
+.outerFbButton {
+  padding: 5px;
+  text-align: center;
+}
+
+.innerFbButton {
+  display: inline-block;
+  padding: 5px;
+}
+
+.innerFbButton p {
+  position: absolute;
+  padding: 5px;
+}
+
+.fbButton {
+  opacity: 0;
+}
+
 #login, #plant-view-form{
     outline: 1px solid #D4D4D4;
     outline-offset: 1px;
@@ -239,6 +258,16 @@ hr{
         margin-bottom: 9px;
     }
 
+}
+
+@media (max-width: 767px) {
+  .innerFbButton {
+    display: block !important;
+  }
+  
+  .outerFbButton {
+    text-align: left;
+  }
 }
 
 .plantView {

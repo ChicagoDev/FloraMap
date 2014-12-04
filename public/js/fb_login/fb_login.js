@@ -23,6 +23,8 @@ function statusChangeCallback(response) {
         // they are logged into this app or not.
         document.getElementById('status').innerHTML = 'Please log ' +
             'into Facebook.';
+        document.getElementById('login-text').innerHTML =
+            '<i class="glyphicon glyphicon-log-in"></i> Log In';
     }
 }
 
@@ -43,6 +45,8 @@ function testAPI() {
         console.log('Successful login for: ' + response.name);
         document.getElementById('status').innerHTML =
             'Thanks for logging in, ' + response.name + '!';
+        document.getElementById('login-text').innerHTML =
+            '<i class="glyphicon glyphicon-log-in"></i> Log out';
     });
 }
 
