@@ -52,6 +52,13 @@ input[type="file"]{
     vertical-align: middle;
 }
 
+#map-mobile{
+    height:400px !important;
+    position: fixed;
+    display: block;
+    vertical-align: middle;
+}
+
 .welcome { text-align: center;}
 
 .leaflet-popup-content-wrapper,.leaflet-popup-tip{background-color: #d2f3cd !importantç}

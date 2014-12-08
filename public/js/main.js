@@ -14,7 +14,9 @@ var AppRouter = Backbone.Router.extend({
         this.headerView = new HeaderView();
         $('.header').html(this.headerView.el);
         
-        init_map(); // Initialize the map
+        if($(document).width() > 990){ 
+            init_map('map'); // Initialize the map
+        }
     },
 
     home: function (id) {
@@ -23,7 +25,7 @@ var AppRouter = Backbone.Router.extend({
         }
         $('#content, #mobile-home').html(this.homeView.el);
         this.headerView.selectMenuItem('');
-        
+        utils.mapIt(false, null);
         utils.hideLogoImg(true);
     },
 
@@ -60,6 +62,8 @@ var AppRouter = Backbone.Router.extend({
         $(".form-actions .delete").add();
         $(".submittedby-group").add();
         $("img#thumbnail").add();
+        
+        updateMap();
         
         utils.hideLogoImg(false);
     },

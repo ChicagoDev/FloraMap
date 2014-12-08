@@ -55,6 +55,34 @@ window.utils = {
         $('.alert').hide();
     },
     
+    mapIt:function(option, plant){
+        if(option){
+            $("#mobile-home, #content").addClass("hidden-xs");
+            //destroy_map();
+            init_map('mobile-map');
+            addSingleMarker(plant);
+            $("#mobile-map").removeClass("hidden-xs");
+            $("#back").removeClass("hidden-xs");
+            
+           /* $("#mobile-home").removeClass("visible-xs-block");
+            $("#content").parent().removeClass("visible-md-block");
+            $("#content").parent().removeClass("visible-lg-block");
+            $("body").height( $("#map").height());*/
+        }
+        else{
+            $("#mobile-home, #content").removeClass("hidden-xs");
+            $("#mobile-map").addClass("hidden-xs");
+            $("#back").addClass("hidden-xs");
+            /*$("#mobile-home").addClass("visible-xs-block");
+            $("#content").parent().addClass("visible-md-block");
+            $("#content").parent().addClass("visible-lg-block");   */     
+        }
+    },
+    
+    backlist:function(){
+        this.mapIt(false,null);
+    },
+    
     hideLogoImg: function (option){
         if(option == true){
             $('.navbar-brand span').css("display","block");

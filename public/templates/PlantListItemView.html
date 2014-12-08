@@ -40,7 +40,8 @@
                         </a> 
                         <button type="button" class="btn btn-default btn-xs visible-xs-block visible-sm-block"
                                 style="margin-right:70px;"
-                                title="Show the plant on the map">
+                                title="Show the plant on the map"
+                                onClick="utils.mapIt(true,{name:'<%= name %>', picture:<%= picture === null ? '\'generic_plant_fm.jpg\'' : 'pics/' + picture %>, lat:'<%= latitude %>', lng:'<%= longitude %>'} );">
                             <span class="glyphicon glyphicon-map-marker"></span> Map It
                         </button>
                     </div>      
