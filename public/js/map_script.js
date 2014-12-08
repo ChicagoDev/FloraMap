@@ -303,8 +303,7 @@ function currentLocation() {
 
 // Initialize the map adding controls, markers and current location
 function init_map(target) {
-    mapID = target;
-     console.log(typeof map);  
+    mapID = target; 
     
     if(map === undefined){    
         map = new L.map(mapID, {

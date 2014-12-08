@@ -63,6 +63,7 @@ window.utils = {
             addSingleMarker(plant);
             $("#mobile-map").removeClass("hidden-xs");
             $("#back").removeClass("hidden-xs");
+            $("#back").css("margin-top","15px");
             
            /* $("#mobile-home").removeClass("visible-xs-block");
             $("#content").parent().removeClass("visible-md-block");

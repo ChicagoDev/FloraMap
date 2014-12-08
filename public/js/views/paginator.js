@@ -13,7 +13,7 @@ window.Paginator = Backbone.View.extend({
         var len = items.length;
         var pageCount = Math.ceil(len / 8);
 
-        $(this.el).html('<ul class="pagination pagination-centered">');
+        $(this.el).html('<div class="text-center"><ul class="pagination">');
 
         for (var i=0; i < pageCount; i++) {
             $('ul', this.el).append("<li" + ((i + 1) === this.options.page ? " class='active'" : "") + "><a href='#plants/page/"+(i+1)+"'>" + (i+1) + "</a></li>");

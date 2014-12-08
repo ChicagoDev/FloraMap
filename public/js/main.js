@@ -4,7 +4,7 @@ var AppRouter = Backbone.Router.extend({
 		""                   : "home",
 		"login"              : "login",
 		"plants"	         : "list",
-		//"plants/page/:page"	 : "list", // used if pagination is ativated
+		"plants/page/:page"	 : "list", // used if pagination is ativated
 		"plants/add"         : "addPlant",
 		"plants/:id"         : "plantDetails",
 		"about"              : "about"
@@ -45,11 +45,11 @@ var AppRouter = Backbone.Router.extend({
             $("#content, #mobile-home").html(new PlantListView({model: plantList, page: p}).el); 
         }});
         
-        // Remove the current markers on the map and adding gain, in order to update
-        updateMap();
-        
-        this.headerView.selectMenuItem('browse-menu');
         utils.hideLogoImg(false);
+        this.headerView.selectMenuItem('browse-menu');
+        
+        // Remove the current markers on the map and adding gain, in order to update
+        updateMap();     
     },
 
     plantDetails: function (id) {

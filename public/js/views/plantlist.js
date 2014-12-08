@@ -10,17 +10,24 @@ window.PlantListView = Backbone.View.extend({
         var startPos = (this.options.page - 1) * 8;
         var endPos = Math.min(startPos + 8, len);
 
-        $(this.el).html('<ul style="padding:5px 0px 120px 0px;"></ul>');
+        $(this.el).html('<ul style="padding:5px 0px 12px 0px;"></ul>');
 
-        //for (var i = startPos; i < endPos; i++) {
-        
-        for (var i = 0; i < len; i++) {
-            $('ul', this.el).append(new PlantListItemView({model: plants[i]}).render().el);            
+        if($(document).width() < 990){ 
+            // Activate the paginator (the line "plants/page/:page"	 : "list" need to be 
+            // uncommented on "main.js"
+            for (var i = startPos; i < endPos; i++) {
+                $('ul', this.el).append(new PlantListItemView({model: plants[i]}).render().el);            
+            }
+
+            $(this.el).append(new Paginator({model: this.model, page: this.options.page}).render().el);
         }
+        else{
+            //for (var i = startPos; i < endPos; i++) {
 
-       // Activate the paginator (the line "plants/page/:page"	 : "list" need to be 
-       // uncommented on "main.js"
-       // $(this.el).append(new Paginator({model: this.model, page: this.options.page}).render().el);
+            for (var i = 0; i < len; i++) {
+                $('ul', this.el).append(new PlantListItemView({model: plants[i]}).render().el);            
+            }        
+        }
 
         return this;
     }
