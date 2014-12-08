@@ -1,5 +1,6 @@
 window.Plant= Backbone.Model.extend({
 
+    //TODO These need to be changed for phonegap, to point to a remote server.
     urlRoot: "/plants",
 
     idAttribute: "_id",
@@ -56,7 +57,9 @@ window.Plant= Backbone.Model.extend({
         name: "",
         description: "",
         picture: null,
-        fbName:""
+        fbName:"",
+        email:"",
+        fbId:""
         //userName: ""
     }
 });
